@@ -15,13 +15,40 @@ body {
     color: white;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-colour;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #070e2b;
+}
+
+::selection {
+    background: white;
+    color: $primary-colour;
+}
+
 a {
     text-decoration: none;
     color: white;
     position: relative;
     padding: 0 10px;
 
-    nav .links &:focus::after {
+    nav .links &:focus::after,
+    nav .links &:hover::after,
+    nav .links &:active::after {
         position: absolute;
         content: "";
         background: $secondary-colour;
@@ -30,6 +57,11 @@ a {
         bottom: -3px;
         left: 10px;
     }
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 60px;
 }
 
 nav {
@@ -41,6 +73,7 @@ nav {
     top: 0;
     width: 100%;
     background: #00051d;
+    z-index: 1;
 
     .brand-logo {
         width: 75px;
@@ -66,15 +99,39 @@ nav {
 }
 
 section {
-    width: 1200px;
+    width: 900px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        margin-top: 30px;
+        position: relative;
+        display: flex;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 5px;
+            width: 145px;
+            background: $secondary-colour;
+            top: -20px;
+            left: 40px;
+        }
+
+        p {
+            width: 50%;
+            padding: 0 40px;
+            line-height: 30px;
+        }
+    }
 
     .img-container {
-
-        width: 200px;
-        height: 500px;
+        width: 50%;
 
         img {
             width: 100%;
+            box-shadow: -11px -10px 0px 0px $secondary-colour;
         }
     }
 }
@@ -91,10 +148,47 @@ section {
     z-index: -1;
 }
 
+
 #story {
-    // margin-top: 100vh;
-    // background: red;
-    // position: absolute;
-    // top: 0;
-    // width: 100%;
+    .content {
+        flex-direction: row;
+    }
+}
+
+#menu {
+    .content {
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            padding: 10px 0;
+            width: 90%;
+        }
+
+        .img-container {
+            width: 100%;
+            margin-top: 25px;
+            height: 300px;
+            overflow: hidden;
+        }
+    }
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+    .column {
+        width: 50%;
+
+        a {
+            background: white;
+            padding: 10px 20px;
+            margin: 5px 0 40px 5px;
+            color: $primary-colour;
+            display: inline-block;
+            box-shadow: -5px -5px 0px 0px $secondary-colour;
+        }
+    }
 }
