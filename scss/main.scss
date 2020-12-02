@@ -127,12 +127,18 @@ section {
     }
 
     .img-container {
-        width: 50%;
+        // width: 50%;
+        width: 35%;
+        height: 550px;
+        background-position: center;
+        background-size: cover;
+        box-shadow: -11px -10px 0px 0px $secondary-colour;
 
-        img {
-            width: 100%;
-            box-shadow: -11px -10px 0px 0px $secondary-colour;
-        }
+
+        // img {
+        //     width: 100%;
+        //     box-shadow: -11px -10px 0px 0px $secondary-colour;
+        // }
     }
 }
 
@@ -153,9 +159,15 @@ section {
     .content {
         flex-direction: row;
     }
+
+    .img-container {
+        background-image: url(../img/portrait.jpg);
+    }
 }
 
-#menu {
+
+#menu,
+#location {
     .content {
         flex-direction: column;
         align-items: center;
@@ -166,29 +178,92 @@ section {
         }
 
         .img-container {
-            width: 100%;
-            margin-top: 25px;
+            background-image: url(../img/cake-display.jpg);
+            width: 88%;
             height: 300px;
-            overflow: hidden;
+            margin-top: 20px;
         }
+
+        // .img-container {
+        //     margin-top: 25px;
+        //     overflow: hidden;
+        // }
     }
 }
+
+#location {
+    .content {
+        flex-direction: column;
+    }
+}
+
 
 .columns {
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
+    justify-content: center;
+    padding: 0 40px;
 
     .column {
         width: 50%;
+        margin-bottom: 60px;
 
         a {
             background: white;
             padding: 10px 20px;
-            margin: 5px 0 40px 5px;
+            margin: 5px 0 0 5px;
             color: $primary-colour;
             display: inline-block;
             box-shadow: -5px -5px 0px 0px $secondary-colour;
+            border: 1px solid transparent;
+
+            &:hover {
+                background: $primary-colour;
+                color: white;
+                border: 1px solid white;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 140px;
+
+    img {
+        width: 100px;
+    }
+
+    a {
+        padding: 0;
+    }
+
+    svg {
+        fill: white;
+        margin: 0 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-links {
+        position: relative;
+        margin-top: 20px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 4px;
+            width: 40px;
+            background: $secondary-colour;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: -17px;
         }
     }
 }
