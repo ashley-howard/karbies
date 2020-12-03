@@ -1,24 +1,11 @@
 var h = window.innerHeight;
-
-// When the user scrolls down 20px from the top of the document, slide down the navbar
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > h || document.documentElement.scrollTop > h) {
-        // make nav sticky
-        // document.getElementsByTagName('nav')[0].style.top = "0";
-        // document.getElementsByTagName('nav')[0].style.position = "sticky";
         document.getElementsByTagName('nav')[0].style.borderBottom = "2px solid #000621";
-        // document.getElementsByTagName('nav')[0].classList.add("sticky");
-        // document.getElementsByTagName('nav')[0].style.transform = "translateY(-60px)";
-
-
-
     } else {
-        // make nav unsticky
-        // document.getElementsByTagName('nav')[0].style.position = "unset";
         document.getElementsByTagName('nav')[0].style.borderBottom = "2px solid transparent";
-        // document.getElementsByTagName('nav')[0].classList.remove("sticky");
     }
 }
 
@@ -31,7 +18,6 @@ function clickSingleA(a) {
     }
 
     a.className = 'single active';
-    // close nav
 
     if (document.body.offsetWidth <= 768) {
         menuOpen();
