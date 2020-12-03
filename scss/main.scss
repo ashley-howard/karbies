@@ -46,9 +46,9 @@ a {
     position: relative;
     padding: 0 10px;
 
-    nav .links &:focus::after,
-    nav .links &:hover::after,
-    nav .links &:active::after {
+    nav #links &:focus::after,
+    nav #links &:hover::after,
+    nav #links &.active::after {
         position: absolute;
         content: "";
         background: $secondary-colour;
@@ -66,14 +66,20 @@ h1 {
 
 nav {
     display: flex;
+    position: fixed;
     align-items: center;
     justify-content: space-between;
     // padding: 10px;
-    position: fixed;
+    // position: fixed;
     top: 0;
     width: 100%;
-    background: #00051d;
+    background: $primary-colour;
     z-index: 1;
+
+    &.sticky {
+        animation: navbar 0.4s linear forwards;
+
+    }
 
     .brand-logo {
         width: 75px;
@@ -84,11 +90,23 @@ nav {
         }
     }
 
-    .links {
+    #links {
         padding: 15px;
 
     }
 }
+
+@keyframes navbar {
+    from {
+        transform: translateY(-60px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
 
 .container {
     margin-top: 100vh;
@@ -178,7 +196,6 @@ section {
         }
 
         .img-container {
-            background-image: url(../img/cake-display.jpg);
             width: 88%;
             height: 300px;
             margin-top: 20px;
@@ -191,10 +208,18 @@ section {
     }
 }
 
+#menu {
+
+    .img-container {
+        background-image: url(../img/cake-display.jpg);
+    }
+}
+
 #location {
     .content {
         flex-direction: column;
     }
+
 }
 
 
@@ -208,6 +233,11 @@ section {
     .column {
         width: 50%;
         margin-bottom: 60px;
+
+        h2 {
+            font-size: 1.2em;
+            letter-spacing: 3px;
+        }
 
         a {
             background: white;
@@ -241,6 +271,14 @@ footer {
 
     a {
         padding: 0;
+
+        &:hover svg {
+            fill: $secondary-colour;
+        }
+
+        &:hover {
+            color: $secondary-colour;
+        }
     }
 
     svg {
@@ -267,3 +305,184 @@ footer {
         }
     }
 }
+
+#menu-btn {
+    display: none;
+}
+
+#menu-line {
+
+    &-left,
+    &-right {
+        position: absolute;
+        height: 2px;
+        background: white;
+        cursor: pointer;
+        transform: rotate(0deg);
+    }
+
+    &-left {
+        width: 20px;
+        right: 31px;
+        top: 20px;
+    }
+
+    &-right {
+        width: 15px;
+        right: 36px;
+        top: 29px;
+    }
+}
+
+
+@keyframes menu-line-left-open {
+    from {
+        transform: rotate(0deg);
+        top: 20px;
+    }
+
+    to {
+        transform: rotate(45deg);
+        top: 23px;
+    }
+}
+
+@keyframes menu-line-right-open {
+    from {
+        width: 15px;
+        top: 29px;
+        transform: rotate(0deg);
+    }
+
+    to {
+        width: 20px;
+        top: 23px;
+        right: 31px;
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes menu-line-left-close {
+    from {
+        transform: rotate(45deg);
+        top: 23px;
+    }
+
+    to {
+
+        transform: rotate(0deg);
+        top: 20px;
+    }
+}
+
+@keyframes menu-line-right-close {
+    from {
+        width: 20px;
+        top: 23px;
+        right: 31px;
+        transform: rotate(135deg);
+    }
+
+    to {
+
+        width: 15px;
+        top: 29px;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes menu-links-open {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes menu-links-close {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    section {
+        width: 100%;
+
+        h1 {
+            margin-left: 35px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        .content {
+            flex-direction: column !important;
+
+            p {
+                width: 92%;
+                padding: 0;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+
+            .columns {
+                .column {
+                    width: 100%;
+                }
+            }
+        }
+
+        .img-container {
+            width: 88%;
+            margin: auto;
+        }
+    }
+
+    #menu .content p {
+        padding: 0;
+        width: 100%;
+    }
+
+
+    #menu-btn {
+        display: flex;
+    }
+
+    #links {
+        padding: 0 !important;
+        display: flex;
+        background: $primary-colour;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        // height: 160px;
+        height: 40vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateY(-100%);
+        border-bottom: 1px solid white;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+
+// font-size: 2.5em;
+// ≥768px
+// ≥576px
