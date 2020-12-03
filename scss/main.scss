@@ -447,6 +447,10 @@ footer {
         transform: translateY(-100%);
         border-bottom: 1px solid white;
     }
+
+    body.index h2 {
+       margin-bottom: 10px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
