@@ -1,0 +1,95 @@
+body.product-page {
+    .container {
+        margin-top: 0 !important;
+    }
+
+    .columns {
+        width: 88%;
+        padding: 0;
+    }
+
+    .img-container {
+        margin-bottom: 15px !important;
+    }
+
+    .cake-1 {
+        background-image: url(../img/cakes/cakes-1.jpg);
+    }
+
+    .cake-2 {
+        background-image: url(../img/cakes/cakes-2.jpg);
+    }
+
+    .cake-3 {
+        background-image: url(../img/cakes/cakes-3.jpg);
+    }
+
+    .cake-4 {
+        background-image: url(../img/cakes/cakes-4.jpg);
+    }
+
+    .tea-1 {
+        background-image: url(../img/teas/tea-1.jpg);
+    }
+
+    .tea-2 {
+        background-image: url(../img/teas/tea-2.jpg);
+    }
+
+    .tea-3 {
+        background-image: url(../img/teas/tea-3.jpg);
+    }
+
+    .tea-4 {
+        background-image: url(../img/teas/tea-4.jpg);
+    }
+
+    .coffee-1 {
+        background-image: url(../img/coffees/coffee-1.jpg);
+    }
+
+    .coffee-2 {
+        background-image: url(../img/coffees/coffee-2.jpg);
+    }
+
+    .coffee-3 {
+        background-image: url(../img/coffees/coffee-3.jpg);
+    }
+
+    .coffee-4 {
+        background-image: url(../img/coffees/coffee-4.jpg);
+    }
+
+    .meal-1 {
+        background-image: url(../img/meals/meal-1.jpg);
+    }
+
+    .meal-2 {
+        background-image: url(../img/meals/meal-2.jpg);
+    }
+
+    .meal-3 {
+        background-image: url(../img/meals/meal-3.jpg);
+    }
+
+    .meal-4 {
+        background-image: url(../img/meals/meal-4.jpg);
+    }
+
+    @media only screen and (max-width: 768px) {
+        p {
+            width: 85% !important;
+        }
+
+        h2 {
+            padding: 10px 20px !important
+        }
+    }
+
+    @media only screen and (min-width: 769px) {
+        section {
+            margin-left: 75px;
+        }
+    }
+
+}

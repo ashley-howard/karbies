@@ -5,6 +5,8 @@ serif;
 $primary-colour: #000417;
 $secondary-colour: #433800;
 
+@import 'product-page';
+
 html {
     scroll-behavior: smooth;
 }
@@ -186,7 +188,7 @@ section {
     }
 }
 
-#menu {
+body.index #menu {
     .img-container {
         background-image: url(../img/cake-display.jpg);
     }
@@ -450,5 +452,11 @@ footer {
 @media only screen and (max-width: 400px) {
     h1 {
         font-size: 2.5em;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    section:not(#hero)  {
+        margin-left: 75px;
     }
 }
